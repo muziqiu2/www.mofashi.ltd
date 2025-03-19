@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时光信鸽</title>
+    <!-- 引入字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Caveat&display=swap" rel="stylesheet">
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #e1d8c5 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==');
+            font-family: 'Caveat', cursive;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* 信纸容器 */
+        .letter-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff9e6;
+            padding: 40px 60px;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 2px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* 信纸横线 */
+        .letter-paper {
+            background-image: linear-gradient(to bottom, 
+                rgba(175, 150, 100, 0.2) 1px, 
+                transparent 1px);
+            background-size: 100% 30px;
+            min-height: 600px;
+        }
+
+        /* 标题样式 */
+        .title {
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            font-size: 3.5em;
+            color: #6b4f3b;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+        }
+
+        /* 内容区域 */
+        .content {
+            font-size: 1.8em;
+            line-height: 30px;
+            color: #4d3a2b;
+            margin-left: 20px;
+        }
+
+        /* 复古按钮 */
+        .vintage-btn {
+            background: #6b4f3b;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 20px 10px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .vintage-btn:hover {
+            background: #8b6f5b;
+            transform: translateY(-2px);
+        }
+
+        /* 装饰元素 */
+        .corner-deco {
+            position: absolute;
+            width: 50px;
+            opacity: 0.3;
+        }
+
+        .top-left { left: 10px; top: 10px; }
+        .top-right { right: 10px; top: 10px; }
+        .bottom-left { left: 10px; bottom: 10px; }
+        .bottom-right { right: 10px; bottom: 10px; }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .letter-container {
+                padding: 20px;
+                margin: 10px;
+            }
+            .title {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="letter-container">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA0ElEQVR4nO3WwQ3DIAwF0E8ZZNBBOkiH6aAdtIN2kA6SQdJBV1CkqkgEwv+O0nukj4wNfjZgCgQCgUAgEPgx1LwJpZQopTyllHLOKaWUY4wxV9ZcVbC1NsaYjTFXvfcXABdE3JRSQ2qstVdr7Q0A7gCwA8AxxnhRSg2pcc7dnHN3AHgAwBMA3kqpITXe+7v3/gEATwB4AcC7VQ0i5tY9zZz3/oGIuZQqClY1hJhba5VSU4mYqxpCzK21Wmu6H4eYqxpCzK01Sqkp6xAxVzWEmFtrlFJT1iFirmoIMbfWKKWmrEPEXNUQYm6tUUpNWYeIuaohxNxao5Sasg4Rc1VDiLm1Rik1ZR0i5qqGEHNrzV9qPtZ8rPlY87HmY83Hmo81H2s+1nys+VjzseZjzT8BzV0XpUZ+WPQAAAAASUVORK5CYII=" 
+             class="corner-deco top-left" alt="装饰">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA0ElEQVR4nO3WwQ3DIAwF0E8ZZNBBOkiH6aAdtIN2kA6SQdJBV1CkqkgEwv+O0nukj4wNfjZgCgQCgUAgEPgx1LwJpZQopTyllHLOKaWUY4wxV9ZcVbC1NsaYjTFXvfcXABdE3JRSQ2qstVdr7Q0A7gCwA8AxxnhRSg2pcc7dnHN3AHgAwBMA3kqpITXe+7v3/gEATwB4AcC7VQ0i5tY9zZz3/oGIuZQqClY1hJhba5VSU4mYqxpCzK21Wmu6H4eYqxpCzK01Sqkp6xAxVzWEmFtrlFJT1iFirmoIMbfWKKWmrEPEXNUQYm6tUUpNWYeIuaohxNxao5Sasg4Rc1VDiLm1Rik1ZR0i5qqGEHNrzV9qPtZ8rPlY87HmY83Hmo81H2s+1nys+VjzseZjzT8BzV0XpUZ+WPQAAAAASUVORK5CYII=" 
+             class="corner-deco top-right" alt="装饰">
+        <div class="letter-paper">
+            <h1 class="title">时光信鸽</h1>
+            
+            <div class="content">
+                <p>亲爱的未来：</p>
+                <p style="text-indent: 2em;">此刻执笔，墨香氤氲。让字句乘着光阴的翅膀，穿越晨雾与星河，抵达你温柔的掌心...</p>
+                
+                <div style="text-align: center; margin: 40px 0;">
+                    <button class="vintage-btn" onclick="writeNewLetter()">
+                        <i class="fas fa-feather"></i> 书写新信
+                    </button>
+                    <button class="vintage-btn" onclick="viewArchive()">
+                        <i class="fas fa-archive"></i> 信件存档
+                    </button>
+                </div>
+
+                <div id="writing-area" style="display: none;">
+                    <textarea style="width:100%; height:300px; background: transparent; 
+                                  border: none; font-size: 1.2em; padding: 10px;" 
+                              placeholder="在此写下你想寄往时光彼岸的文字..."></textarea>
+                    <button class="vintage-btn" onclick="sendLetter()">
+                        <i class="fas fa-paper-plane"></i> 寄出信件
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function writeNewLetter() {
+            const area = document.getElementById('writing-area');
+            area.style.display = 'block';
+            area.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function sendLetter() {
+            const text = document.querySelector('textarea').value;
+            if(text.trim()) {
+                localStorage.setItem(`letter_${Date.now()}`, text);
+                alert('信件已由时光信鸽携往未来！');
+                document.querySelector('textarea').value = '';
+                document.getElementById('writing-area').style.display = 'none';
+            }
+        }
+
+        function viewArchive() {
+            const letters = Object.entries(localStorage)
+                             .filter(([key]) => key.startsWith('letter_'));
+            if(letters.length === 0) {
+                alert('时光宝匣中尚未存有信件...');
+                return;
+            }
+            
+            const content = letters.map(([key, value]) => 
+                `<div style="margin:20px 0;border-bottom:1px dashed #ddd;padding-bottom:10px;">
+                    <p>${value}</p>
+                    <small style="color:#999;">${new Date(Number(key.split('_')[1])).toLocaleString()}</small>
+                </div>`
+            ).join('');
+            
+            document.querySelector('.content').innerHTML = `
+                <h3 style="text-align:center; margin-bottom:20px;">📜 时光存档</h3>
+                ${content}
+                <button class="vintage-btn" onclick="location.reload()" 
+                    style="display:block; margin: 20px auto;">
+                    <i class="fas fa-arrow-left"></i> 返回
+                </button>`;
+        }
+    </script>
+</body>
+</html>
