@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>时光信鸽</title>
-    <!-- 引入字体 -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Caveat&display=swap" rel="stylesheet">
-    <!-- 引入图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 国内CDN字体 -->
+    <link href="https://fonts.loli.net/css2?family=Dancing+Script:wght@600&family=Caveat&display=swap" rel="stylesheet">
+    <!-- 国内图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 基础样式 */
         * {
             margin: 0;
             padding: 0;
@@ -21,9 +20,10 @@
             font-family: 'Caveat', cursive;
             min-height: 100vh;
             padding: 20px;
+            position: relative;
+            padding-bottom: 80px;
         }
 
-        /* 信纸容器 */
         .letter-container {
             max-width: 800px;
             margin: 20px auto;
@@ -35,7 +35,6 @@
             animation: fadeIn 1s ease-in;
         }
 
-        /* 信纸横线 */
         .letter-paper {
             background-image: linear-gradient(to bottom, 
                 rgba(175, 150, 100, 0.2) 1px, 
@@ -44,7 +43,6 @@
             min-height: 600px;
         }
 
-        /* 标题样式 */
         .title {
             font-family: 'Dancing Script', cursive;
             text-align: center;
@@ -54,7 +52,6 @@
             text-shadow: 2px 2px 2px rgba(0,0,0,0.1);
         }
 
-        /* 内容区域 */
         .content {
             font-size: 1.8em;
             line-height: 30px;
@@ -62,7 +59,6 @@
             margin-left: 20px;
         }
 
-        /* 复古按钮 */
         .vintage-btn {
             background: #6b4f3b;
             color: white;
@@ -82,7 +78,6 @@
             transform: translateY(-2px);
         }
 
-        /* 装饰元素 */
         .corner-deco {
             position: absolute;
             width: 50px;
@@ -94,13 +89,34 @@
         .bottom-left { left: 10px; bottom: 10px; }
         .bottom-right { right: 10px; bottom: 10px; }
 
-        /* 动画效果 */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 响应式设计 */
+        /* 备案信息样式 */
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            padding: 10px;
+        }
+
+        .footer a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .footer img {
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+        }
+
         @media (max-width: 768px) {
             .letter-container {
                 padding: 20px;
@@ -108,6 +124,9 @@
             }
             .title {
                 font-size: 2.5em;
+            }
+            .footer {
+                font-size: 12px;
             }
         }
     </style>
@@ -144,6 +163,17 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- 备案信息 -->
+    <div class="footer">
+        <a href="https://beian.miit.gov.cn/" rel="nofollow">
+            <img src="https://vip-img.mofashi.ltd/2/2024/03/29/6606aa3c1c577.webp" alt=""> 鲁ICP备2022005744号-1
+        </a>
+        <br>
+        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=鲁公网安备37152102000141号" rel="nofollow">
+            <img src="https://vip-img.mofashi.ltd/2/2024/03/29/6606a53662cef.webp" alt=""> 鲁公网安备37152102000141号
+        </a>
     </div>
 
     <script>
